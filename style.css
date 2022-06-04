@@ -1,0 +1,42 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #1f1f1f
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+}
+
+.display {
+    flex: 1;
+    border: 1px red solid;
+}
+
+.container {
+    flex: 7;
+    border: 1px red solid;
+    display: flex;
+}
+
+.number {
+    flex: 4;
+    border: 1px red solid;
+}
+
+.operator {
+    flex: 1;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    flex: 1;
+}
