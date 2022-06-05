@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
     color: #FFFFFF;
-    background-color: #1f1f1f
+    background-color: #1f1f1f;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 28px;
 }
 
 body {
@@ -14,29 +17,40 @@ body {
 }
 
 .display {
-    flex: 1;
-    border: 1px red solid;
+    flex: 2;
+    display: flex;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align:right;
+    width: 97%;
 }
 
 .container {
     flex: 7;
-    border: 1px red solid;
     display: flex;
 }
 
+
 .number {
     flex: 4;
-    border: 1px red solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .operator {
     flex: 1;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
 }
 
-ul {
-    display: flex;
+button {
+    height: 100%;
+    width: 100%;
+    border: 1px solid white;
 }
 
-li {
-    flex: 1;
-}
+
