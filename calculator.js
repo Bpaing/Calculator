@@ -20,6 +20,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b == 0) {
+        alert("Can't divide by 0.");
+        return;
+    }
     return a / b;
 }
 
@@ -32,12 +36,10 @@ function evaluate() {
     const a = storage.shift();
     const op = storage.shift();
     const b = storage.shift();
-    console.log(`Evaluating ${a} ${op} ${b}`);
     const result = operate(opMap[op], a, b)
     storage.push(result);
     const p = document.querySelector('p');
     p.textContent = result;
-    console.log(storage);
 }
 
 function numInput() {
@@ -46,6 +48,7 @@ function numInput() {
         p.textContent = "";
         opSelected = false;
     }
+    if (p.textContent.includes(".") && this.textContent === ".") {return;}
     p.textContent += this.textContent;
     //minus must precede a number + no repeats
     //only one decimal per number
@@ -68,13 +71,11 @@ function opInput() {
         storage.push(op);
         opSelected = true;
     }
-    console.log(storage);
 }
 
 function clear() {
     document.querySelector('p').textContent = '';
     storage = [];
-    console.log(storage);
 }
 
 /*  When an operator is clicked, save current display into a variable
